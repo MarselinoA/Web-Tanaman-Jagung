@@ -1,0 +1,544 @@
+:root {
+  --green-dark: #16351f;
+  --green: #2f6f40;
+  --green-soft: #e8f2de;
+  --yellow: #efb52d;
+  --cream: #fff7e5;
+  --paper: rgba(255, 249, 236, 0.88);
+  --text: #1f271c;
+  --muted: #586451;
+  --shadow: 0 28px 70px rgba(29, 43, 20, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(13, 24, 12, 0.7), rgba(28, 45, 19, 0.58) 28%, rgba(239, 219, 158, 0.74) 52%, #ead69a 100%),
+    url("Blog-Panen-Jagung.webp"),
+    radial-gradient(circle at 20% 8%, #ffe28b, transparent 32%),
+    linear-gradient(135deg, #244b2a, #f1d385 45%, #f7efd8);
+  background-size: cover, cover, auto, auto;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 24px clamp(18px, 4vw, 48px) 72px;
+  position: relative;
+}
+
+.navbar,
+.hero-content,
+.section,
+.footer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.navbar {
+  position: sticky;
+  top: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 250, 235, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.85rem;
+  color: #fff8e9;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  color: #fff8e9;
+  font-weight: 700;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 248, 229, 0.9);
+  color: var(--green-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(24px, 5vw, 60px);
+  align-items: center;
+  padding-top: 110px;
+}
+
+.eyebrow,
+.section-tag,
+.card-label {
+  margin: 0;
+  color: var(--yellow);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.hero-card h2,
+.closing-card h2 {
+  font-family: "DM Serif Display", serif;
+  line-height: 1.05;
+}
+
+.hero-copy h1 {
+  max-width: 11ch;
+  margin: 14px 0 18px;
+  color: #fff8ed;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+}
+
+.lead {
+  max-width: 64ch;
+  color: rgba(255, 249, 236, 0.92);
+  font-size: 1.08rem;
+  line-height: 1.9;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--yellow), #ffda68);
+  color: #4e3400;
+  box-shadow: 0 18px 36px rgba(239, 181, 45, 0.32);
+}
+
+.button-secondary {
+  border: 1px solid rgba(255, 249, 236, 0.4);
+  background: rgba(33, 65, 34, 0.28);
+  color: #fff5d9;
+  backdrop-filter: blur(12px);
+}
+
+.hero-card,
+.info-card,
+.step-card,
+.disease-card,
+.closing-card {
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  padding: 34px;
+  border-radius: 34px;
+}
+
+.hero-card h2 {
+  margin: 12px 0;
+  color: var(--green-dark);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.hero-card p,
+.info-card p,
+.info-card li,
+.step-card p,
+.disease-card p,
+.closing-card p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.section {
+  padding: 92px clamp(18px, 4vw, 48px) 0;
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+.section-heading h2 {
+  margin: 10px 0 0;
+  color: var(--green-dark);
+  font-size: clamp(2.1rem, 4vw, 3.7rem);
+}
+
+.grid-two,
+.timeline,
+.disease-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline,
+.disease-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card,
+.step-card,
+.disease-card {
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.highlight {
+  background: linear-gradient(160deg, rgba(255, 249, 232, 0.98), rgba(255, 226, 142, 0.78));
+}
+
+.info-card h3,
+.step-card h3,
+.disease-card h3 {
+  margin: 0 0 12px;
+  color: var(--green-dark);
+  font-size: 1.35rem;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-card li + li {
+  margin-top: 10px;
+}
+
+.step-card span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffd66a, #fff3c8);
+  color: #5b3b00;
+  font-weight: 800;
+}
+
+.disease-card {
+  position: relative;
+}
+
+.disease-card::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  width: 54px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), transparent);
+}
+
+.closing-section {
+  padding-bottom: 92px;
+}
+
+.closing-card {
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: 36px;
+  background:
+    linear-gradient(135deg, rgba(20, 54, 30, 0.95), rgba(52, 98, 52, 0.9)),
+    url("Blog-Panen-Jagung.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.closing-card h2 {
+  max-width: 14ch;
+  margin: 12px 0 14px;
+  color: #fff8ed;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.closing-card p,
+.closing-card .section-tag {
+  color: #fff8ed;
+}
+
+.footer {
+  padding: 0 20px 34px;
+  color: #4f5848;
+  text-align: center;
+  font-weight: 700;
+}
+
+.chatbot {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+}
+
+.chatbot-toggle {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--green), #4f8d58);
+  color: #fffdf4;
+  box-shadow: 0 20px 44px rgba(20, 54, 30, 0.34);
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.chatbot-window {
+  display: none;
+  flex-direction: column;
+  width: min(410px, calc(100vw - 28px));
+  max-height: min(680px, calc(100vh - 90px));
+  margin-top: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 30px;
+  background: rgba(255, 251, 244, 0.95);
+  box-shadow: 0 28px 70px rgba(20, 31, 17, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.chatbot.open .chatbot-window {
+  display: flex;
+}
+
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--green-dark), #477849);
+  color: #fff9ef;
+}
+
+.chatbot-header p {
+  margin: 0 0 6px;
+  color: #ffdf75;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.chatbot-header h2 {
+  margin: 0;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+}
+
+.chatbot-close {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff9ef;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.chatbot-body {
+  min-height: 270px;
+  padding: 20px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(255, 248, 232, 0.78), rgba(255, 253, 246, 0.92));
+}
+
+.chatbot-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chatbot-message {
+  max-width: 88%;
+  padding: 14px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  box-shadow: 0 10px 24px rgba(18, 25, 15, 0.08);
+}
+
+.chatbot-message.bot {
+  align-self: flex-start;
+  background: rgba(255, 252, 245, 0.96);
+  border-bottom-left-radius: 6px;
+}
+
+.chatbot-message.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--yellow), #ffd66a);
+  border-bottom-right-radius: 6px;
+  color: #4b3605;
+  font-weight: 800;
+}
+
+.chatbot-message.result {
+  border: 1px solid rgba(46, 104, 62, 0.16);
+  background: linear-gradient(180deg, rgba(242, 249, 237, 0.98), rgba(255, 252, 245, 0.98));
+}
+
+.chatbot-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px 20px;
+}
+
+.chatbot-answer-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.chatbot-answer,
+.chatbot-reset {
+  border: none;
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.chatbot-answer {
+  background: linear-gradient(135deg, var(--green), #4b8b56);
+  color: #fffdf6;
+}
+
+.chatbot-reset {
+  background: rgba(239, 181, 45, 0.18);
+  color: #7a4e00;
+}
+
+.chatbot-answer:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero-content,
+  .grid-two,
+  .timeline,
+  .disease-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 28px;
+    background: rgba(255, 250, 235, 0.8);
+  }
+
+  .brand,
+  .nav-links {
+    color: var(--green-dark);
+    text-shadow: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    padding-top: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 16px;
+  }
+
+  .hero-content {
+    padding-top: 58px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.35rem, 12vw, 4rem);
+  }
+
+  .chatbot {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .chatbot-window {
+    width: min(390px, calc(100vw - 20px));
+    max-height: min(72vh, 640px);
+  }
+}
